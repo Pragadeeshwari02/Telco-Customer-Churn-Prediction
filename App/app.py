@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 
 # Load model, scaler, and feature list
-model = joblib.load('logistic_model.pkl')
-scaler = joblib.load('scaler.pkl')
-feature_list = joblib.load('scaled_feature.pkl')
+model = joblib.load('Models/logistic_model.pkl')
+scaler = joblib.load('Models/scaler.pkl')
+feature_list = joblib.load('Models/scaled_feature.pkl')
 
 # Ensure feature_list is a 1D flat list
 if isinstance(feature_list, (np.ndarray, pd.Index)):
@@ -83,3 +83,4 @@ if st.button("Predict"):
         import traceback
         st.error(f"⚠️ Error during prediction: {str(e)}")
         st.code(traceback.format_exc())  # Show full stack trace
+
